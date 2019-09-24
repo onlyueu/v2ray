@@ -16,10 +16,8 @@ echo Please input the hostname
 read hostname
 echo Please input the Email address 
 read email
-port="$(grep 'port' /etc/v2ray/config.json)"
-
+port="$(echo $(grep 'port' /etc/v2ray/config.json)| cut -d' ' -f 2| cut -d',' -f 1)"
 cat >/etc/caddy/Caddyfile <<EOL
-
 https://$hostname {
 gzip
 tls $email
