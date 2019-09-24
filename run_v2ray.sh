@@ -1,3 +1,4 @@
+bash <(curl -L -s https://install.direct/go.sh)
 mv /etc/v2ray/config.json /etc/v2ray/config.json.bk
 port="$(grep 'port' /etc/v2ray/config.json.bk)"
 id="$(grep 'id' /etc/v2ray/config.json.bk)"
