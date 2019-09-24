@@ -1,5 +1,3 @@
-apt-get update
-apt-get install curl nano -y
 curl https://getcaddy.com | bash -s personal http.forwardproxy
 mkdir /etc/caddy
 chown -R root:www-data /etc/caddy
@@ -35,4 +33,4 @@ mkdir /var/www/$hostname
 
 systemctl daemon-reload
 systemctl enable caddy
-systemctl start caddy
+systemctl restart caddy
