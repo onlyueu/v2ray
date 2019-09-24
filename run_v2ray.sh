@@ -73,3 +73,13 @@ cat >/etc/v2ray/config.json <<EOL
 EOL
 
 sed -i -e "s/$oport/$port/" -e "s/$oid/$id/" /etc/v2ray/config.json
+
+while true; do
+    read -p "Do you want to get a QR code for v2ray? (y or n)" ans
+    case $ans in
+        [Yy]* ) apt-get install qrencode -y; id="$(grep 'id' /etc/v2ray/config.json)"; qrencode -t ASCIIi $(echo $id| cut -d'"' -f 4);echo $id| cut -d'"' -f 4; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer y or n.";;
+    esac
+done
+
