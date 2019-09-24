@@ -4,7 +4,7 @@ id="$(grep 'id' /etc/v2ray/config.json.bk)"
 oport="$(echo '"port": 11111,')"
 oid="$(echo '"id": "2a6af611-1111-4da3-b446-8866e398031a",')"
 
-cat >/etc/myconfig.conf <<EOL
+cat >/etc/v2ray/config.json <<EOL
     {
         "log": {
                 "access": "/var/log/v2ray/access.log",
@@ -70,6 +70,6 @@ cat >/etc/myconfig.conf <<EOL
             }
         }
     }
-EOF
+EOL
 
-sed -e "s/$oport/$port/" -e "s/$oid/$id/" /etc/v2ray/config.json
+sed -i -e "s/$oport/$port/" -e "s/$oid/$id/" /etc/v2ray/config.json
