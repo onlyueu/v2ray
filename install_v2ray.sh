@@ -29,7 +29,7 @@ cat >/etc/v2ray/config.json <<EOL
                         "network":"ws",
                         "security": "auto",
                         "wsSettings":{
-                                "path": "/enterv2ray/"
+                                "path": "/onlyv2ray/"
                                 }
                         }
         },
