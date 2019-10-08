@@ -21,7 +21,7 @@ cat >/etc/caddy/Caddyfile <<EOL
 https://$hostname {
 gzip
 tls $email
-proxy /enterv2ray/ 127.0.0.1:$port {
+proxy /onlyv2ray/ 127.0.0.1:$port {
     websocket
     header_upstream -Origin
   }
